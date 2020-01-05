@@ -33,6 +33,7 @@ $(".row" + i).append(input);
 var saveButton = $("<button>");
 saveButton.addClass("saveBtn");
 saveButton.attr("id", "inputs" + i);
+saveButton.html("Save");
 $(".row" + i).append(saveButton);
 }
 //function to compare times to add class for css 
@@ -50,6 +51,17 @@ if (pageTime === momentTime) {
     $(element).addClass("future");
  }
 });
+
+ //add event listener to save to localStorage
+ $(document).on("click", ".saveBtn", function() {
+  var inputs = $("this").attr("id");
+  var txt = $("." + inputs).val();
+  console.log(txt);
+  
+//local storage unsure how to do 
+  localStorage.setItem("inputs", txt);
+ });
+ 
 
   
 
