@@ -19,7 +19,23 @@ var availHours = [ "9AM", "10AM", "11AM", "12AM", "1PM", "2PM", "3PM", "4PM", "5
     rowsDiv.attr("datetime",i + 9);
     $("div.row0").attr("datetime", "09");
 
- }
+    //add rows for times
+    var newTimes = $("<div>");
+    $(".time" + i).append(newTimes);
+ 
+//add area for input
+var input = $("<textarea");
+input.addClass("inputs" + i);
+$(".time" + i).append(input);
+
+//add save button
+var saveButton = $("<button>");
+saveButton.addClass("savebtn");
+$(".time" + i).append(saveButton);
+
+
+
+}
     //
 
 
