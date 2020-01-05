@@ -7,24 +7,27 @@ $("#currentDay").text(dateTime);
 
 var availHours = [ "9AM", "10AM", "11AM", "12AM", "1PM", "2PM", "3PM", "4PM", "5PM"];
  //test array
- //console.log(availHours[2]);
+ console.log(availHours[2]);
 
  //for loop
- for (var i = 0; i > availHours.length; i++) {
+ for (var i = 0; i < availHours.length; i++) {
      var rowsDiv = $("<div>");
-     rowsDiv.addClass("time");
-     rowsDiv.addClass("time" + i);
-     $(".containter").append(rowsDiv);
+     rowsDiv.addClass("time-block");
+     rowsDiv.addClass("row" + i);
+     $(".container").append(rowsDiv);
+     
 
     rowsDiv.attr("datetime",i + 9);
     $("div.row0").attr("datetime", "09");
 
     //add rows for times
     var newTimes = $("<div>");
-    $(".time" + i).append(newTimes);
+    newTimes.addClass("hour" + i);
+    newTimes.text(availHours[i]);
+    $(".row" + i).append(newTimes);
  
 //add area for input
-var input = $("<textarea");
+var input = $("<textarea>");
 input.addClass("inputs" + i);
 $(".time" + i).append(input);
 
